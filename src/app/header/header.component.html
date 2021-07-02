@@ -1,0 +1,40 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="false">
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/minesweeper">Categorías</a>
+
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button fxHide.gt-xs
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <div fxLayout="row" fxFlex>
+          <div fxLayout="column" fxFlex="10" fxLayoutAlign="center start"><a routerLink="/">
+            <img src="assets/logo.png" class="logo">
+          </a></div>
+          <div fxLayout="column" fxFlex="65" fxHide.xs>
+            <ul fxLayout="row" fxFlex fxLayoutAlign="start center">
+              <li fxLayout="column" >
+                <a routerLink="/minesweeper" routerLinkActive="active-route">Categorías</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </mat-toolbar>
+      <!-- Add Content Here -->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

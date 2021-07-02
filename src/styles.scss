@@ -1,4 +1,110 @@
-/* You can add global styles to this file, and also import other style files */
+@import './colors.scss';
+
+@include mat-core();
+
+// Create the theme object (a Sass map containing all of the palettes).
+$light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
+
+
+@include angular-material-theme($light-theme);
+
+
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+.dark-theme {
+  @include angular-material-theme($dark-theme);
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.content {
+  margin: 20px;
+  height: auto;
+  font-family: unquote("Roboto");
+}
+
+.header-action-button {
+  margin: 10px !important;
+}
+
+.mat-warn-100 {
+  background-color: $light-warn-100;
+}
+
+.mat-warn-200 {
+  background-color: $light-warn-200;
+}
+
+.mat-warn-300 {
+  background-color: $light-warn-300;
+}
+
+.mat-warn-400 {
+  background-color: $light-warn-400;
+}
+
+.mat-warn-500 {
+  background-color: $light-warn-500;
+}
+
+.mat-warn-600 {
+  background-color: $light-warn-600;
+}
+
+.font-primary {
+  color: $light-primary-default;
+}
+.font-primary-700 {
+  color: $light-primary-700;
+}
+
+.font-accent {
+  color: $light-accent-default;
+}
+
+.font-warn {
+  color: $light-warn-default;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.text-warn-shadow {
+  text-shadow: 2px 2px $light-warn-default;
+}
+
+.text-primary-shadow {
+  text-shadow: 2px 2px $light-primary-default;
+}
+
+particle {
+  border-radius: 50%;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+}
+
+.primary-background {
+  background-color: $light-primary-default;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  padding: 10px;
+}

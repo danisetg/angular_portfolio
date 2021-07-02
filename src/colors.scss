@@ -1,0 +1,41 @@
+@import '~@angular/material/theming';
+
+//light colors
+$light-primary: mat-palette($mat-indigo);
+$light-accent: mat-palette($mat-yellow, A200, A100, A400);
+$light-warn: mat-palette($mat-red);
+
+// Custom Sass colors vars (will be available in all the project)
+$light-primary-default: mat-color($light-primary);
+$light-primary-shadow: mat-color($light-primary, 900);
+$light-primary-100: mat-color($light-primary, 100);
+$light-primary-200: mat-color($light-primary, 200);
+$light-primary-300: mat-color($light-primary, 300);
+$light-primary-400: mat-color($light-primary, 400);
+$light-primary-600: mat-color($light-primary, 600);
+$light-primary-700: mat-color($light-primary, 700);
+
+
+$light-accent-default: mat-color($light-accent);
+$light-accent-lightest: mat-color($light-accent, 50);
+
+$light-warn-default: mat-color($light-warn);
+$light-warn-100: mat-color($light-warn, 100);
+$light-warn-200: mat-color($light-warn, 200);
+$light-warn-300: mat-color($light-warn, 300);
+$light-warn-400: mat-color($light-warn, 400);
+$light-warn-500: mat-color($light-warn, 500);
+$light-warn-600: mat-color($light-warn, 600);
+$light-warn-700: mat-color($light-warn, 700);
+$light-warn-800: mat-color($light-warn, 800);
+$light-warn-900: mat-color($light-warn, 900);
+
+//dark colors
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-deep-orange);
+
+// Custom Sass colors vars (will be available in all the project)
+$dark-primary-default: mat-color($dark-primary);
+$dark-accent-default: mat-color($dark-accent);
+$dark-warn-default: mat-color($dark-warn);

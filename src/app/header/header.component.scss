@@ -1,0 +1,55 @@
+@import '../../colors.scss';
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  :hover {
+    color: antiquewhite;
+  }
+}
+
+ul {
+  li {
+    margin-right: 30px;
+    display: inline-block;
+    font-size: 18px;
+    :hover {
+      color: antiquewhite;
+    }
+    button {
+      font-size: 18px;
+    }
+  }
+}
+
+.active-route {
+  padding: 5px;
+  background-color: $light-primary-600;
+  border-radius: 5px;
+  border: 1px solid $light-accent-lightest;
+
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
