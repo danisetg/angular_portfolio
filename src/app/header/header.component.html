@@ -26,8 +26,30 @@
           <div fxLayout="column" fxFlex="65" fxHide.xs>
             <ul fxLayout="row" fxFlex fxLayoutAlign="start center">
               <li fxLayout="column" >
-                <a routerLink="/minesweeper" routerLinkActive="active-route">Categorías</a>
+                <a [matMenuTriggerFor]="categoriesMenu">
+                  Categorías
+                  <mat-icon>expand_more</mat-icon>
+                </a>
+                <mat-menu #categoriesMenu="matMenu">
+                  <div *ngFor="let category of categories">
+                    <button mat-menu-item [matMenuTriggerFor]="vertebrates" *ngIf="category.children.length" [matMenuTriggerData]="{children: category.children}">
+                      <span>{{category.name}}</span>
+                    </button>
+                    <button mat-menu-item *ngIf="!category.children.length">
+                      <span>{{category.name}}</span>
+                    </button>
+                  </div>
+
+                </mat-menu>
+                <mat-menu #vertebrates="matMenu">
+                  <ng-template matMenuContent let-children="children">
+                    <div *ngFor="let child of children">
+                      <button mat-menu-item>{{child.name}}</button>
+                    </div>
+                  </ng-template>
+                </mat-menu>
               </li>
+            
             </ul>
           </div>
 

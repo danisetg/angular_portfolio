@@ -1,0 +1,16 @@
+<form #categoryForm="ngForm">
+  <div fxlayout="row">
+    <div fxLayout="column" fxFlex="30"></div>
+    <div fxLayout="column" fxFlex="40">
+      <div fxLayout="row">
+        <div fxLayout="column" fxFlex="50">
+          <mat-form-field>
+            <input matInput name="name" placeholder="Name" [ngModel]="category.name">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column" fxFlex="30"></div>
+  </div>
+
+</form>

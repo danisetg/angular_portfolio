@@ -9,7 +9,7 @@ export class CategoryService extends ApiService{
 
   constructor(httpClient: HttpClient) {
     super(httpClient);
-    this.base_url = "category";
+    this.base_url = "categories";
   }
 
 }

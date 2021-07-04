@@ -33,9 +33,13 @@ ul {
     font-size: 18px;
     :hover {
       color: antiquewhite;
+      cursor: pointer;
     }
     button {
       font-size: 18px;
+    }
+    .mat-icon {
+      vertical-align: middle;
     }
   }
 }

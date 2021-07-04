@@ -1,0 +1,35 @@
+<div class="content">
+  <div fxlayout="row">
+    <div fxLayout="column" fxFlex="15"></div>
+    <div fxLayout="column" fxFlex="70">
+      <div fxLayout="row wrap">
+        <div fxLayout="column" fxFlex="25" *ngFor="let category of categories" class="category-list">
+            <h2 class="root-category">{{category.name}}
+              <mat-icon color="primary" matTooltip="Add Subcategory" class="add-button" (click)="onAddCategory(category)" *ngIf="!addingSub">
+                add
+              </mat-icon></h2>
+            <span *ngFor="let child of category.children" class="child-category">
+              {{child.name}}
+              <button matSuffix mat-icon-button aria-label="Clear" (click)="createCategory(category)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button matSuffix mat-icon-button aria-label="Clear" (click)="createCategory(category)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </span>
+            <mat-form-field *ngIf="category.addingSub" style="width: fit-content;">
+              <input matInput placeholder="Type name" name="name" [(ngModel)]="name">
+              <button color="primary" matSuffix mat-icon-button aria-label="Clear" (click)="createCategory(category)">
+                <mat-icon>check</mat-icon>
+              </button>
+              <button color="warn" matSuffix mat-icon-button aria-label="Clear" (click)="onCancel(category)">
+                <mat-icon>close</mat-icon>
+              </button>
+
+            </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column" fxFlex="15"></div>
+  </div>
+</div>
