@@ -28,10 +28,30 @@ export class CategoryComponent implements OnInit {
     this.addingSub = true;
   }
 
+  onEditCategory(category: any) {
+    category.editing = true;
+    this.addingSub = true;
+    this.name = category.name;
+  }
+
+  onCancelEdit(category: any) {
+    category.editing = false;
+    this.addingSub = false;
+    this.name = '';
+  }
+
   onCancel(parent: any) {
     parent.addingSub = false;
     this.addingSub = false;
     this.name = '';
+  }
+
+  editCategory(category: any) {
+    category.name = this.name;
+    this.categoryService.update(category).subscribe(response => {
+      console.log(response);
+      this.onCancelEdit(category);
+    });
   }
 
   deleteCategory(category_id: number) {

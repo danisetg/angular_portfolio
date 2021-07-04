@@ -28,7 +28,7 @@ export class ApiService {
     }
 
     update(body: any, options?: any): Observable<any> {
-        return this.httpClient.put(`${this.api_url}${this.base_url}/${body.url}`, body, options);
+        return this.httpClient.put(`${this.api_url}${this.base_url}/${body.id}`, body, options);
     }
 
      delete(id: string | number, options?: any): Observable<any> {
