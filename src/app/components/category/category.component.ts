@@ -34,12 +34,18 @@ export class CategoryComponent implements OnInit {
     this.name = '';
   }
 
+  deleteCategory(category_id: number) {
+    this.categoryService.delete(category_id).subscribe(response => {
+      this.getCategories();
+      console.log(response);
+    });
+  }
+
   createCategory(parent: any) {
     this.categoryService.create({name: this.name, category_id: parent.id}).subscribe(response => {
       console.log(response);
       parent.children.push(response);
       this.onCancel(parent);
-
     });
   }
 }
