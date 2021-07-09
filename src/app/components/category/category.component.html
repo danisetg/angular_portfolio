@@ -3,11 +3,29 @@
     <div fxLayout="column" fxFlex="15"></div>
     <div fxLayout="column" fxFlex="70">
       <div fxLayout="row wrap">
-        <div fxLayout="column" fxFlex="25" *ngFor="let category of categories" class="category-list">
-            <h2 class="root-category">{{category.name}}
+        <div fxLayout="column" fxFlex="33" *ngFor="let category of categories" class="category-list">
+          <mat-form-field *ngIf="category.editing" style="width: fit-content;">
+            <input matInput placeholder="Type name" name="name" [(ngModel)]="name">
+            <button color="primary" matSuffix mat-icon-button aria-label="Clear" (click)="editCategory(category)">
+              <mat-icon>check</mat-icon>
+            </button>
+            <button color="warn" matSuffix mat-icon-button aria-label="Clear" (click)="onCancelEdit(category)">
+              <mat-icon>close</mat-icon>
+            </button>
+
+          </mat-form-field>
+            <div class="root-category" *ngIf="!category.editing" >
+              <a [routerLink]="'/categories/' + category.id">{{category.name}}</a>
               <mat-icon color="primary" matTooltip="Add Subcategory" class="add-button" (click)="onAddCategory(category)" *ngIf="!addingSub">
                 add
-              </mat-icon></h2>
+              </mat-icon>
+              <button matSuffix mat-icon-button aria-label="Clear" (click)="onEditCategory(category)">
+                <mat-icon class="action-icon">edit</mat-icon>
+              </button>
+              <button matSuffix mat-icon-button aria-label="Clear" color="warn" (click)="deleteCategory(category.id)">
+                <mat-icon class="action-icon">delete</mat-icon>
+              </button>
+            </div>
             <div *ngFor="let child of category.children">
               <mat-form-field *ngIf="child.editing" style="width: fit-content;">
                 <input matInput placeholder="Type name" name="name" [(ngModel)]="name">
@@ -19,16 +37,18 @@
                 </button>
 
               </mat-form-field>
-              <h3  class="child-category" *ngIf="!child.editing">
+              <div fxLayout="row" class="child-category">
 
-                {{child.name}}
+                  <a [routerLink]="'/categories/' + child.id">{{child.name}}</a>
+
                 <button matSuffix mat-icon-button aria-label="Clear" (click)="onEditCategory(child)">
                   <mat-icon class="action-icon">edit</mat-icon>
                 </button>
                 <button matSuffix mat-icon-button aria-label="Clear" color="warn" (click)="deleteCategory(child.id)">
                   <mat-icon class="action-icon">delete</mat-icon>
                 </button>
-              </h3>
+              </div>
+
             </div>
 
             <mat-form-field *ngIf="category.addingSub" style="width: fit-content;">

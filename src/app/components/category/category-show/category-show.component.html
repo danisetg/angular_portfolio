@@ -1,0 +1,16 @@
+<div class="content" *ngIf="category">
+  <div fxlayout="row">
+    <div fxLayout="column" fxFlex="10" ></div>
+    <div fxLayout="column" fxFlex="10" style="margin-top: 20px;">
+      <div fxLayout="row wrap">
+        <app-navigation-bar [category]="category"></app-navigation-bar>
+      </div>
+      <div fxLayout="row" *ngFor="let child of category.children">
+        <span class="categories-menu-item" [routerLink]="'/categories/' + child.id">{{child.name}}</span>
+      </div>
+    </div>
+    <div fxLayout="column" fxFlex="60">
+
+    </div>
+  </div>
+</div>

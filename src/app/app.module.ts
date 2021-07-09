@@ -21,10 +21,13 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryComponent } from './components/category/category.component';
-import { CategoryFormComponent } from './components/category-form/category-form.component';
-import { CategoryCreateComponent } from './components/category-create/category-create.component';
-import { CategoryUpdateComponent } from './components/category-update/category-update.component';
+import { CategoryFormComponent } from './components/category/category-form/category-form.component';
+import { CategoryCreateComponent } from './components/category/category-create/category-create.component';
+import { CategoryUpdateComponent } from './components/category/category-update/category-update.component';
 import { FormsModule } from '@angular/forms';
+import { CategoryDetailsComponent } from './components/category/category-details/category-details.component';
+import { CategoryShowComponent } from './components/category/category-show/category-show.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { FormsModule } from '@angular/forms';
     CategoryComponent,
     CategoryFormComponent,
     CategoryCreateComponent,
-    CategoryUpdateComponent
+    CategoryUpdateComponent,
+    CategoryDetailsComponent,
+    CategoryShowComponent,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,

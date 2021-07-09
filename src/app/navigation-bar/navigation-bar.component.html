@@ -1,0 +1,6 @@
+<div fxLayout="row" class="navigation-bar">
+  <div *ngFor="let item of hierarchy; let i = index">
+    <span *ngIf="i > 0" class="separator">></span>
+    <span [routerLink]="'/categories/' + item.id" class="navigation-item font-primary">{{item.name}}</span>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+.categories-menu-item {
+  color:black;
+  margin: 5px;
+  &:hover {
+    color: gray;
+    cursor: pointer;
+  }
+}

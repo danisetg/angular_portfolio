@@ -62,7 +62,7 @@ export class CategoryComponent implements OnInit {
   }
 
   createCategory(parent: any) {
-    this.categoryService.create({name: this.name, category_id: parent.id}).subscribe(response => {
+    this.categoryService.create({name: this.name, parent_id: parent.id}).subscribe(response => {
       console.log(response);
       parent.children.push(response);
       this.onCancel(parent);

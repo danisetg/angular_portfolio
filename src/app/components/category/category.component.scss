@@ -8,13 +8,36 @@
 }
 
 .root-category {
-  margin-bottom: 0px;
+  margin-bottom: 4px;
+  font-size: 30px;
+  a {
+    text-decoration: none !important;
+    color: black;
+    &:hover {
+      cursor: pointer;
+      color: gray;
+    }
+  }
+
 }
+
 
 .child-category {
   margin-left: 5px;
   margin-bottom: 3px;
+  font-size: 20px;
+  align-items: center;
+  a {
+    text-decoration: none !important;
+    color: black;
+    &:hover {
+      cursor: pointer;
+      color: gray;
+    }
+  }
+
 }
+
 
 .action-icon {
   font-size: 20px;

@@ -1,0 +1,17 @@
+.navigation-item {
+  font-size: 15px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.separator {
+  font-size: 18px;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: black;
+}
+
+.navigation-bar {
+  margin-bottom: 20px;
+}
